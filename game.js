@@ -40,7 +40,7 @@ function playGame() {
 
     // Questions //
   ];
-    let firstQuestion = questions[0]; 
+    let firstQuestion = questions[0][0]; 
 
     // Post the first question to the HTML document 
     document.getElementById("question").innerHTML = firstQuestion
