@@ -1,6 +1,13 @@
 const playBtn = document.querySelector(".playgame");
 
 function playGame() {
+
+
+  let questions = [
+    ["Question 1?", correctAnswers[0], "GUIDO VAN ROSSUM" ]
+  ]
+
+  let correctAnswers = ["BRENDAN EICH", ]
   // Prompt the user for the answer
   const userAnswerOne = prompt("Who was the creator of JavaScript?");
   if (userAnswerOne.toUpperCase() === "BRENDAN EICH") {
@@ -15,7 +22,7 @@ function playGame() {
   
 }
 
-function presentProgrammer(imageSrc) {
+function presentProgrammerImage(imageSrc) {
   const imgElement = document.getElementById("programmerImage");
   imgElement.src = imageSrc;
   imgElement.style.display = "block";
