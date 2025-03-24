@@ -1,6 +1,9 @@
 const playBtn = document.querySelector(".playgame");
+let currentQuestionIndex = 0; // Variable to keep track of the current question index
 
 function playGame() {
+  playBtn.style.display = "none"; // Hide the play button once the game starts
+
   let correctAnswers = [
     "BRENDAN EICH",
     "GUIDO VAN ROSSUM OSCON",
@@ -32,37 +35,61 @@ function playGame() {
     ],
     [
       "Who is the inventor and father of the programming language C#?",
-      correctAnswers[4],
+      correctAnswers[3],
       "GUIDO VAN ROSSUM",
       "BRENDAN EICH",
       "JAMES GOSLING",
     ],
-
-    // Questions //
   ];
-    let firstQuestion = questions[0][0]; 
 
-    // Post the first question to the HTML document 
-    document.getElementById("question").innerHTML = firstQuestion
-
-    // Prompt the first question to the HTML document 
-    const userAnswerOne = prompt(firstQuestion); 
-    if (userAnswerOne.toUpperCase() === "BRENDAN EICH"){
-      document.getElementById("prompt").innerHTML =
-        "Yes that is correct! Brendan Eich created JavaScript in 1995! Let us take a moment and be thankful for his work! Here is a picture of Brendan, the Father of Javascript!";
-      presentProgrammerImage("/images/BRENDAN_EICH.jpg"); 
-    } else {
-      document.getElementById("prompt").innerHTML = "Incorrect. The correct answer is Brendan Eich."; 
-      presentProgrammerImage("/images/BRENDAN_EICH.jpg");
-    }
- 
+  loadQuestion(questions, correctAnswers);
 }
 
-function presentProgrammerImage(imageSrc) {
-  const imgElement = document.getElementById("programmerImage");
-  imgElement.src = imageSrc;
-  imgElement.style.display = "block";
+function loadQuestion(questions, correctAnswers) {
+  if (currentQuestionIndex >= questions.length) {
+    document.getElementById("prompt").innerHTML = "You've completed the quiz!";
+    return;
+  }
+
+  let currentQuestion = questions[currentQuestionIndex]; // Get the current question array
+
+  // Post the current question to the HTML document
+  document.getElementById("question").innerHTML = currentQuestion[0];
+
+  // Create answer buttons
+  const answersList = document.getElementById("answers");
+  answersList.innerHTML = ""; // Clear any existing answers
+  for (let i = 1; i < currentQuestion.length; i++) {
+    let answerBtn = document.createElement("button");
+    answerBtn.innerText = currentQuestion[i];
+    answerBtn.addEventListener("click", function () {
+      checkAnswer(
+        currentQuestion[i],
+        correctAnswers[currentQuestionIndex],
+        questions,
+        correctAnswers
+      );
+    });
+    answersList.appendChild(answerBtn);
+  }
 }
+
+function checkAnswer(userAnswer, correctAnswer, questions, correctAnswers) {
+  if (userAnswer.toUpperCase() === correctAnswer) {
+    document.getElementById("prompt").innerHTML =
+      "Yes that is correct! Brendan Eich created JavaScript in 1995!";
+    presentProgrammerImage("/images/BRENDANEICH.jpg");
+  } else {
+    document.getElementById("prompt").innerHTML =
+      "Incorrect. The correct answer is Brendan Eich.";
+  }
+
+  // Increment the current question index and load the next question
+  currentQuestionIndex++;
+  loadQuestion(questions, correctAnswers);
+}
+
+
 
 function main() {
   playBtn.addEventListener("click", playGame);
