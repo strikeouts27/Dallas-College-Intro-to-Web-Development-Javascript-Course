@@ -1,98 +1,85 @@
-const playBtn = document.querySelector(".playgame");
 let currentQuestionIndex = 0; // Variable to keep track of the current question index
 
-function playGame() {
-  playBtn.style.display = "none"; // Hide the play button once the game starts
-
-  let correctAnswers = [
+// Multi-dimensional array with the trivia questions
+let questions = [
+  [
+    "Who is the inventor and father of the programming language Javascript?",
+    0,
     "BRENDAN EICH",
-    "GUIDO VAN ROSSUM OSCON",
+    "GUIDO VAN ROSSUM",
+    "JAMES GOSLING",
+  ],
+  [
+    "Who is the inventor and father of the programming language Python?",
+    1,
+    "BRENDAN EICH",
+    "GUIDO VAN ROSSUM",
+    "JAMES GOSLING",
+  ],
+  [
+    "Who is the inventor and father of the programming language Java?",
+    2,
+    "GUIDO VAN ROSSUM",
     "JAMES GOSLING",
     "SCOTT WILTAMUTH",
-  ];
+  ],
+];
 
-  let questions = [
-    [
-      "Who is the inventor and father of the programming language Javascript?",
-      correctAnswers[0],
-      "GUIDO VAN ROSSUM",
-      "JAMES_GOSLING",
-      "SCOTT WILTAMUTH",
-    ],
-    [
-      "Who is the inventor and father of the programming language Python?",
-      correctAnswers[1],
-      "BRENDAN EICH",
-      "JAMES GOSLING",
-      "SCOTT WILTAMUTH",
-    ],
-    [
-      "Who is the inventor and father of the programming language Java?",
-      correctAnswers[2],
-      "GUIDO VAN ROSSUM",
-      "JAMES GOSLING",
-      "SCOTT WILTAMUTH",
-    ],
-    [
-      "Who is the inventor and father of the programming language C#?",
-      correctAnswers[3],
-      "GUIDO VAN ROSSUM",
-      "BRENDAN EICH",
-      "JAMES GOSLING",
-    ],
-  ];
-
-  loadQuestion(questions, correctAnswers);
+// Function to dynamically create the 'Play Game' button
+function createPlayButton() {
+  const promptDiv = document.getElementById("prompt");
+  promptDiv.innerHTML =
+    '<button class="playgame" onclick="playGame()">Let\'s Play the Game!</button>';
 }
 
-function loadQuestion(questions, correctAnswers) {
-  if (currentQuestionIndex >= questions.length) {
+// Function to start the game
+function playGame() {
+  if (questions.length === 0) {
     document.getElementById("prompt").innerHTML = "You've completed the quiz!";
     return;
   }
 
-  let currentQuestion = questions[currentQuestionIndex]; // Get the current question array
+  // Access the first question in the questions array
+  let currentQuestion = questions.shift();
 
-  // Post the current question to the HTML document
+  // Post the question to the HTML document
   document.getElementById("question").innerHTML = currentQuestion[0];
 
-  // Create answer buttons
+  // Access the correct answer index
+  let correctAnswerIndex = currentQuestion[1];
+
+  // Remove the correct answer index from the array
+  currentQuestion.splice(1, 1);
+
+  // Create a list of answers
   const answersList = document.getElementById("answers");
   answersList.innerHTML = ""; // Clear any existing answers
   for (let i = 1; i < currentQuestion.length; i++) {
     let answerBtn = document.createElement("button");
     answerBtn.innerText = currentQuestion[i];
-    answerBtn.addEventListener("click", function () {
-      checkAnswer(
-        currentQuestion[i],
-        correctAnswers[currentQuestionIndex],
-        questions,
-        correctAnswers
-      );
-    });
+    answerBtn.setAttribute(
+      "onclick",
+      `checkAnswer(${i - 1}, ${correctAnswerIndex})`
+    );
     answersList.appendChild(answerBtn);
   }
+
+  // Add a prompt for the user to click the best answer
+  document.getElementById("prompt").innerHTML = "Click the best answer.";
 }
 
-function checkAnswer(userAnswer, correctAnswer, questions, correctAnswers) {
-  if (userAnswer.toUpperCase() === correctAnswer) {
-    document.getElementById("prompt").innerHTML =
-      "Yes that is correct! Brendan Eich created JavaScript in 1995!";
-    presentProgrammerImage("/images/BRENDANEICH.jpg");
+// Function to check the user's answer
+function checkAnswer(userAnswerIndex, correctAnswerIndex) {
+  if (userAnswerIndex === correctAnswerIndex) {
+    document.getElementById("prompt").innerHTML = "Yes, that is correct!";
   } else {
     document.getElementById("prompt").innerHTML =
       "Incorrect. The correct answer is Brendan Eich.";
   }
 
-  // Increment the current question index and load the next question
-  currentQuestionIndex++;
-  loadQuestion(questions, correctAnswers);
+  // Load the next question
+  playGame();
 }
 
-
-
-function main() {
-  playBtn.addEventListener("click", playGame);
-}
-
-main();
+// Initialize the game by creating the 'Play Game' button
+createPlayButton();
