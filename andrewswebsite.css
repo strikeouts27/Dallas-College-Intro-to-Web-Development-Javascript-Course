@@ -1,0 +1,95 @@
+.navbar {
+    display: flex; /* Enables Flexbox */
+    justify-content: space-around; /* Distributes links evenly with space between them */
+    align-items: center; /* Vertically centers the links */
+    padding: 10px 0; /* Adds vertical padding */
+}
+
+.navbar a {
+    color: black;
+    text-align: center; /* Centers the text */
+    padding: 14px 16px; /* Adds spacing around the links */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 17px; /* Sets font size */
+}
+
+.navbar a:hover {
+    background-color: #ddd; /* Changes background color on hover */
+    color: black; /* Changes text color on hover */
+}
+
+.navbar a.active {
+    background-color: white; /* Active link background color */
+    color: black
+}
+
+.programming-images {
+    flex-direction: row;
+    flex-direction: wrap;
+    width: 300px;
+    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.video-game-images {
+    flex-direction: row;
+    flex-direction: wrap;
+    width: 300px;
+    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.boardgames-images {
+    flex-direction: row;
+    flex-direction: wrap;
+    width: 300px;
+    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+}
+.education-images {
+    flex-direction: row;
+    flex-direction: wrap;
+    width: 300px;
+    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.anime-images {
+    flex-direction: row;
+    flex-direction: wrap;
+    width: 300px;
+    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.sports-images {
+    flex-direction: row;
+    flex-direction: wrap;
+    width: 300px;
+    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.music-images {
+    flex-direction: row;
+    flex-direction: wrap;
+    width: 300px;
+    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.books-images {
+    flex-direction: row;
+    flex-direction: wrap;
+    width: 300px;
+    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+}
