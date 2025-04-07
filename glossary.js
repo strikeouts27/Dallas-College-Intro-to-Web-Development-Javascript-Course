@@ -1,6 +1,23 @@
 $(document).ready(function () {
   console.log("Document Object Has Loaded!");
 
+  $(document).keypress(function (evt) {
+  // Get the key pressed and convert it to lowercase
+  const keyPressed = String.fromCharCode(evt.which).toLowerCase();
+
+  // Navigate to the corresponding flower using the id
+  window.location = "#" + keyPressed;
+})
+
+
+$(document).keypress(function (evt) {
+  // Get the key pressed and convert it to lowercase
+  const keyPressed = String.fromCharCode(evt.which).toLowerCase();
+
+  // Navigate to the corresponding flower using the id
+  window.location = "#" + keyPressed;
+});
+
   // Hide all elements with the class 'botanic' on page load
   $(".botanic").hide();
 
@@ -48,5 +65,6 @@ $(document).ready(function () {
       // Hide the associated image div when the mouse leaves
       $(imgId).hide();
     }
+    
   );
 });
