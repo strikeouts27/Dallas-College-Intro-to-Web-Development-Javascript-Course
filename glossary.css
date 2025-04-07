@@ -88,33 +88,3 @@ input[type='submit'] {
 	background-color: #afeeee;
 	text-align: center;
 }
-
-#pltTitle {
-  color: #07a;
-}
-
-.botanic {
-  color: darkgreen;
-  font-style: italic;
-}
-
-.col {
-  width: 20em;
-  padding: 1em;
-  float: left;
-}
-
-footer {
-  clear: both;
-}
-
-/* Add a dashed bottom border for .pic elements */
-.pic {
-  border-bottom: thin dashed darkgreen;
-}
-
-/* Use absolute positioning for image divs */
-.imgdiv {
-  position: absolute;
-  display: none; /* Ensure imgdivs are hidden by default */
-}
