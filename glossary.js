@@ -13,35 +13,39 @@ $(document).ready(function () {
     $(this).children(".botanic").show(); // Show only the botanic name for the clicked flower
   });
 
-  // Hover event to handle both mouseover and mouseout for h1 and h2
+  // Add mouseover and mouseout events for h1 and h2
   $("h1, h2").hover(
     function () {
-      $(this).css("color", "blue"); // On mouseover
+      $(this).css("color", "blue"); // Change color to blue on mouseover
     },
     function () {
-      $(this).css("color", "black"); // On mouseout
+      $(this).css("color", "black"); // Revert color to black on mouseout
     }
   );
 
-  // Hover event for the .pic class to show and hide images
+  // Add a hover event for the .pic class
   $(".pic").hover(
     function (evt) {
-      const x = evt.pageX;
+      const imgId = "#" + $(this).attr("title");
+      const x = evt.pageX + 150;
       const y = evt.pageY;
 
-      // Find the associated image div and position it
-      const imgId = $(this).data("img"); // Get the unique ID from the data-img attribute
-      $("#" + imgId)
+      $(imgId)
         .css({
-          top: y + 10 + "px", // Position slightly below the cursor
-          left: x + 10 + "px", // Position slightly to the right of the cursor
+          top: y + "px",
+          left: x + "px",
         })
-        .show(); // Show the image
+        .show();
     },
     function () {
-      // Hide the associated image div when the mouse leaves
-      const imgId = $(this).data("img");
-      $("#" + imgId).hide();
+      const imgId = "#" + $(this).attr("title");
+      $(imgId).hide();
     }
   );
+
+  // Add a keypress event to navigate to flowers
+  $(document).keypress(function (evt) {
+    const keyPressed = String.fromCharCode(evt.which).toLowerCase(); // Get the key pressed and convert to lowercase
+    window.location = "#" + keyPressed; // Navigate to the corresponding flower
+  });
 });
