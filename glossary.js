@@ -1,13 +1,17 @@
 $(document).ready(function () {
-  console.log("Ready!");
+  console.log("Document Object Has Loaded!");
 
-  // Mouseover event to change color to blue
-  $("h1, h2").mouseover(function () {
-    $(this).css("color", "blue");
-  });
+  // hide and show()
+  $(".botanic").hide(); // Hides all elements with the class 'botanic'
 
-  // Mouseout event to change color back to black
-  $("h1, h2").mouseout(function () {
-    $(this).css("color", "black");
-  });
+
+  // Hover event to handle both mouseover and mouseout
+  $("h1", "h2").hover(
+    function () {
+      $(this).css("color", "blue"); // On mouseover
+    },
+    function () {
+      $(this).css("color", "black"); // On mouseout
+    }
+  );
 });
