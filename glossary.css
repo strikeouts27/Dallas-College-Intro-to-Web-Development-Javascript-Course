@@ -107,5 +107,15 @@ input[type='submit'] {
 
 footer {
   clear: both;
-}                                  
+}            
+
+/* Add a dashed bottom border for .pic elements */
+.pic {
+  border-bottom: thin dashed darkgreen;
+}
+
+/* Use absolute positioning for image divs */
+.imgdiv {
+  position: absolute;
+}
 
