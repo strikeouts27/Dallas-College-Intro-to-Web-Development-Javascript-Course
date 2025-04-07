@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-/* Add a dashed bottom border for .pic elements */
-.pic {
-  border-bottom: thin dashed darkgreen;
-}
-
-/* Use absolute positioning for image divs */
-.imgdiv {
-  position: absolute;
-  display: none; /* Ensure imgdivs are hidden by default */
-}
-=======
 body {
 	background: url(springbg.jpg);
 	background-size: 100%;
@@ -99,16 +87,23 @@ input[type='submit'] {
 .Spring {
 	background-color: #afeeee;
 	text-align: center;
->>>>>>> refs/remotes/origin/branch
+}
 
-/* Styling for botanic names */
+#pltTitle {
+  color: #07a;
+}
+
 .botanic {
   color: darkgreen;
   font-style: italic;
-  display: none; /* Ensure botanic names are hidden by default */
 }
 
-/* Styling for flower elements */
-.flower {
-  cursor: pointer; /* Add a pointer cursor to indicate clickable elements */
+.col {
+  width: 20em;
+  padding: 1em;
+  float: left;
+}
+
+footer {
+  clear: both;
 }
