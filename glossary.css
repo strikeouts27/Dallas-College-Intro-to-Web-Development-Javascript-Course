@@ -88,3 +88,16 @@ input[type='submit'] {
 	background-color: #afeeee;
 	text-align: center;
 }
+
+.botanic {
+  border-bottom: thin dashed darkgreen; /* Add a thin dashed bottom border */
+}
+
+.imgdiv {
+  position: absolute; /* Use absolute positioning for the images */
+}
+
+.flower {
+  position: relative; /* Set the parent container as the reference for absolute positioning */
+}
+
