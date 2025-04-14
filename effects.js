@@ -35,4 +35,26 @@ $(document).ready(function () {
       easing: "swing", // Use the swing easing function
     }
   );
+
+  // Add submit event to the form
+  $("#newsSignup").submit(function (event) {
+    event.preventDefault(); // Stop the default form submission
+
+    // Display an alert message
+    alert("Thank you for registering");
+
+    // Hide the newsSignup form
+    $("#newsSignup").hide();
+
+    // Fade the signuplink anchor tag to 30% opacity
+    $("#signuplink").animate(
+      {
+        opacity: 0.3, // Set opacity to 30%
+      },
+      {
+        duration: 1000, // Animation duration in milliseconds (1 second)
+        easing: "swing", // Use the swing easing function
+      }
+    );
+  });
 });
