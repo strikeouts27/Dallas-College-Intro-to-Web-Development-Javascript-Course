@@ -23,4 +23,16 @@ $(document).ready(function () {
       });
     }
   );
+
+  // Animate the #rose element
+  $("#rose").css({ right: "-100px", opacity: 0 }).animate(
+    {
+      right: "100px", // Move to 100px from the right
+      opacity: 1, // Fade in
+    },
+    {
+      duration: 2000, // Animation duration in milliseconds (2 seconds)
+      easing: "swing", // Use the swing easing function
+    }
+  );
 });
