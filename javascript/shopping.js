@@ -58,8 +58,24 @@ function Main() {
       // Show the Add to Cart button for the associated flower
       document.getElementById(itemId).style.display = "block";
     }
+  });
 
-    ('#rating').onclick().forEach()
+  // Add a click event to the star images inside a span with the class 'rating'
+  document.querySelectorAll(".rating img").forEach((star) => {
+    star.addEventListener("click", function () {
+      const allStars = this.parentElement.querySelectorAll("img"); // Get all sibling stars
+      const clickedIndex = Array.from(allStars).indexOf(this); // Get the index of the clicked star
+
+      // Reset all stars to 'staroff.gif'
+      allStars.forEach((img) => {
+        img.src = "/gif/staroff.gif";
+      });
+
+      // Set the clicked star and all previous stars to 'staron.gif'
+      for (let i = 0; i <= clickedIndex; i++) {
+        allStars[i].src = "/gif/staron.gif";
+      }
+    });
   });
 }
 
