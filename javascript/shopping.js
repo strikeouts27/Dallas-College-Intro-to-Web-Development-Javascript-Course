@@ -14,10 +14,17 @@ function Main() {
       if (itemCount > 0) {
         $("#empty").hide(); // Use jQuery to hide the #empty list item
       }
-
-      // Additional logic for adding items can go here
-    });
-  });
+      // Get the name and id attributes
+      const itemName = this.getAttribute("name");
+      const itemId = this.getAttribute("id");
+      document.createElement("li"); 
+      itemName.classList.add("cartItem"); 
+      newItem.setAttribute("name", itemId); 
+      newItem.textContent = `Item: ${itemName}`; 
+      
+      
+        });
+    }); 
 }
 
 // Call the Main function to start the application
