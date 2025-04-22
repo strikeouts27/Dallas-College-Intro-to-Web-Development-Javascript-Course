@@ -50,7 +50,7 @@ function Main() {
       // Deduct 1 from the item count
       itemCount--;
 
-      // If the item count is 0, show the #empty list item
+      // If the item count is 0, show the #empty list item 
       if (itemCount === 0) {
         $("#empty").show(); // Use jQuery to show the #empty list item
       }
