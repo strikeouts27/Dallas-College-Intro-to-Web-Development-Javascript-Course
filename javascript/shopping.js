@@ -50,11 +50,17 @@ $(document).ready(function () {
     }
   });
 
-// Change the image source of
-$(".rating").on("click", function () {
-  $(this).siblings(".star").attr("src", "gif/staroff.gif");
-});
+  $(".rating").on("click", "img", function () {
+    // Change the image source of all siblings to "staroff.gif"
+    $(this).siblings("img").attr("src", "gif/staroff.gif");
 
-// Change
+    // Change the image source of the clicked star to "staron.gif"
+    $(this).attr("src", "gif/staron.gif");
+
+    // Change the image source of all previous stars to "staron.gif"
+    $(this).prevAll("img").attr("src", "gif/staron.gif");
+  });
+
+
     
 });
