@@ -8,6 +8,10 @@
     <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
     <link href="css/orderform.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="jquery_validate/jquery.validate.min.js"></script>
+    <script src="javascript/orderform.js"></script>
 
 	</head>
 
@@ -30,14 +34,14 @@
               <span id="nameErr" class="error"></span><br>
 
               <label for="address">Billing Address:</label>
-              <input type="text" name="address" id="address" required>
+              <input type="text" name="address" id="address" class="required date">
               <span id="addressErr" class="error"></span><br>
 
               <label for="city">City:</label>
               <input type="text" name="city" id="city" required>
               <span id="cityErr" class="error"></span><br>
 
-              <label for="state">State: </label>
+              <label for="state">Billing State: </label>
               <select name="state" id="state">
                 <option value="TX">Texas</option>
                 <option value="OK">Oklahoma</option>
@@ -55,7 +59,7 @@
               <span id="zipErr" class="error"></span><br>
 
               <label for="email">Email:</label>
-              <input type="email" name="email" id="email" required>
+              <input type="email" name="email" id="email" class="required date">
               <span id="emailErr" class="error"></span><br>
 
               <label for="email2">Confirm email:</label>
@@ -83,7 +87,7 @@
                 <input type="text" name="shipcity" id="shipcity" required>
                 <span id="shipcityErr" class="error"></span><br>
 
-                <label for="shipstate">State: </label>
+                <label for="shipstate">Shipping State: </label>
                 <select name="shipstate" id="shipstate">
                   <option value="TX">Texas</option>
                   <option value="OK">Oklahoma</option>
