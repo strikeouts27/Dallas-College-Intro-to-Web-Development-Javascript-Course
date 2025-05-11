@@ -58,4 +58,21 @@ $(document).ready(function () {
       $("#email2Err").text("");
     }
   }); // end validate email2 
+
+  $('#copy').click(function() {
+    if ($(this).prop('checked')) {
+      // copies a value from #address
+      var address = $('#address').val();
+      // assigns the value from #address to #shipaddr
+      $('#shipaddr').val(address);
+
+      let city = $('#city').val();
+      $('#shipcity').val(city); 
+
+      let zipcode = $("#zip").val();
+      $("#shipzip").val(zipcode);
+      
+    }
+  });
+  
 });
