@@ -1,0 +1,47 @@
+/* Universal Selector Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+}
+
+h1 {
+    color: white;
+}
+
+li:has(a) {
+    color: white;
+
+}
+
+ul {
+    background-color: #333;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    
+}
+
+li {
+    color: black; 
+    float: left; 
+    padding: 3px;
+    margin: 1px; 
+
+}
+
+li a {
+    display: block;
+    color: white; 
+    text-align: center;
+    padding: 5px 8px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */ 
+li a:hover {
+    background-color: #111;
+}
