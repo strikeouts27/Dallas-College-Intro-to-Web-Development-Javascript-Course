@@ -30,11 +30,11 @@
     <div class="container item-grid">
         <div class="item jQuery1">
 
-            <img src="images/DavidHyson.jpg" class="Professor" alt="Professor David Hyson Profile Photo" width="200" height="200">
+            <img src="images/DavidHyson.jpg" class="Professor" alt="Professor David Hyson Profile Photo" width="350px" height="350px">
             <p>Professor David Hyson</p>
         </div>
 
-        <div class="item jQuery2">jQuery2
+        <div class="item Professor">Professor
 
             <p>Professor David Hyson teaches Javascript at Dallas College. A summary of his accomplishments include:</p> 
             <ul>
@@ -66,32 +66,103 @@
                     Trained 35 personnel to operate and maintain the Heating/Ventilation and Air Conditioner Environment Management
                 </li>
             </ul>
+
         </div>
 
+        <div class="item MaterialLearnedImage">
+            <img src="images/DallasCollege.jpg" height="350px" width="500px">
+
+            
+        </div>
+
+
+        <div class="item MaterialLearnedText">
+
+            <p>What I Learned In Beginning Web Programming</p>
+            <p>Students Who Take This Course Can Expect to Learn</p>
+            <ul>
+                <li>Basic Javascript Syntax </li>
+                <li>An Understanding of the Document Object Model</li>
+                <li>Javascript Built In Functions</li>
+                <li>How to Target Elements on A Webpage/li>
+                <li>jQuery On Click Events </li>
+                <li>jQuery Animations</li>
+                <li>Web Development Tools Such Visual Studio Code, Developer Tools, and Github</li>
+            </ul>
+            <p> By learning these foundational concepts I now know there is a lot to programming and that
+                building a quality website takes work. David has helped me learn valuable techniques. I would like
+                to showcase some of them for you the viewer. 
+
+                I will be showing a Javascript Function and Two jQuery Techniques.
+            </p>
+
+        </div>
+
+        <div class="item jQuery5">
+            <img src="images/javascript.png" height="350px" width="350px"> 
+        </div>
+
+        <div class="item Javascript ">Javascript Knowledge
+            <p>In Javascript we can utilize functions to accomplish work for us. Here we have a simple Javascript function that converts US Dollars to English Pounds.
+                The function keyword 
+            </p>
+            <!-- Show the code snippet -->
+<pre><code>
+    function dollarsToPounds(dollars) {
+      const exchangeRate = 0.79;
+      return dollars * exchangeRate;
+    }
+    </code></pre>
+    
+    <!-- Input and button for user interaction -->
+    <label for="usdInput">Enter USD amount:</label>
+    <input type="number" id="usdInput" />
+    <button onclick="showPounds()">Convert to Pounds</button>
+    <p id="result"></p>
+    
+    <script>
+    function dollarsToPounds(dollars) {
+      const exchangeRate = 0.79;
+      return dollars * exchangeRate;
+    }
+    
+    function showPounds() {
+      const usd = document.getElementById('usdInput').value;
+      const pounds = dollarsToPounds(Number(usd));
+      document.getElementById('result').textContent = `${usd} USD is ${pounds.toFixed(2)} GBP`;
+    }
+    </script>
+
+        </div>
         
+        <div class="item jQuery7">
+            <img src="images/jQuery.png" height="350px" width="350px" class="jqueryLogo1"> 
+            <br>
+            <button class="jQueryToggleButton">Toggle Button</button>
+        </div>
 
-        <div class="item jQuery3">jQuery3</div>
-
-        <div class="item jQuery4">jQuery4</div>
-
-        <div class="item jQuery5">jQuery5</div>
-
-        <div class="item jQuery6">jquery6</div>
+        <div class="item jQuery8">jquery8
+            <p>Being able to target elements on a web page is a vital skill in web development. It also pays to be able to activate javascript when you want to.
+                One way of doing this is with the on click event handler. It is possible to click on an image, and have it fade in and fade out. Do you see that jQuery image to the left?
+                Click on it and watch it fade in and fade out! We can use the jquery toggle method to achieve this!
+            </p>
+        </div>
         
-        <div class="item jQuery7">jquery7</div>
+        <div class="item jQuery9">
+            <img src="images/jQuery.png" height="350px" width="350px" class="jQueryLogo2"> 
+            <br>
+            <button class="SlideUpButton">Slide Up Button</button>
+            <button class="SlideDownButton">Slide Down Button </button>  
+        </div>
 
-        <div class="item jQuery8">jquery8</div>
-
-
+        <div class="item jQuery10">
+            <p> We can also use jQuery to have elements slide up and down on a page.
+                This is useful for hiding materials like navbars. I want you the user to 
+                click on the jQuery logo slide button and see what I am talking about. 
+            </p>
+        </div>
 
     </div>
-
-    </div>
-    
-    
-
-
-
     
 </body>
 </html>
